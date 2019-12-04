@@ -13,5 +13,5 @@ for($i=0;$i<count($result)  ;$i++){
         $count+=1;
     }
 }
-echo($count);
+echo("Правильных ответов: ".$count." из ".count($kek));
 
