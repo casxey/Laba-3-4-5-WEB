@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css?family=Calistoga|Dancing+Script|Lobster|Ruge+Boogie&display=swap" 
+rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<title>Document</title>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#loginform').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "GET",
+            url: 'prec.php',
+            data: $(this).serialize(),
+            success: function(response)
+            {
+    
+                var downcountElement=document.getElementById('resp'); //
+                downcountElement.innerHTML=response;
+               
+           }
+       });
+     });
+});
+</script>
+
+</head>
+<body>
+<header>
+<div class="display__inline">
+<div class="Lab">
+  <span>Lab 3</span>
+</div>
+<div class="test__name">
+  <span>Choose the correct answer</span>
+</div>
+</div>
+</header>
+
+<main>
+<div class="container">
+<div class="the__task">
+  <span>Select the right word and type in the input field:</span>
+</div>
+
+<form   id="loginform" name="form" class="question__form" action="prec.php" method="get">
+  <div id="resp" class="check">
+    
+  </div>
+  
+  <div class="question__block">
+    <label
+      >1. I thought this time things were going to be better. Losing the contract was
+      <input class="input__question" type="text" value="" id="output" name="data[]"/>
+      to swallow.
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input
+          type="radio"
+          name="name1"
+          id="rad"
+          class="radioBtn"
+          onclick="document.getElementById('output').value=this.value"
+          
+          value="bottom line"
+        />
+        A) bottom line
+      </label>
+      <label class="check-block">
+        <input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output').value=this.value"
+          name="name1"
+          value="blue collar"
+        />
+        B) blue collar
+      </label>
+      <label class="check-block"
+        ><input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output').value=this.value"
+          name="name1"
+          value="a bitter pill "
+        />
+        C) a bitter pill
+      </label>
+      <label class="check-block">
+        <input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output').value=this.value"
+          name="name1"
+          value="back to the drawing board"
+        />
+        D) back to the drawing board
+      </label>
+      <div class="radio-block">
+        <label class="check-block">
+          <input
+            type="radio"
+            name="name1"
+            id="rad"
+            class="radioBtn"
+            onclick="document.getElementById('output').value=this.value"
+            
+            value="blow-by-blow"
+          />
+          E) blow-by-blow
+        </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      2. We've lost the contract thanks to your incompetence. You really
+      <input
+        class="input__question"
+        id="output1"
+        type="text"
+        name="data[]"
+      />
+      , didn't you?
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output1').value=this.value"
+          name="name1"
+          value=" back to the drawing board "
+        />
+        A)  back to the drawing board
+      </label>
+
+      <label class="check-block">
+        <input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output1').value=this.value"
+          name="name1"
+          value="bottlenecks "
+        />
+        B) bottlenecks
+      </label>
+
+      <label class="check-block"
+        ><input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output1').value=this.value"
+          name="name1"
+          value="bottom line"
+        />
+        C) bottom line
+      </label>
+      <label class="check-block"
+        ><input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output1').value=this.value"
+          name="name1"
+          value="blue collar"
+        />
+        D) blue collar
+      </label>
+      <label class="check-block"
+        ><input
+          type="radio"
+          class="radioBtn"
+          onclick="document.getElementById('output1').value=this.value"
+          name="name1"
+          value="blew it"
+        />
+        E) blew it
+      </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      3. I'd be better off stopping my legal job and doing jobs for cash. The
+      <input class="input__question" id="output2" type="text" name="data[]" /> 
+      is the only way to make money these days.
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input
+          type="radio"
+          name="name1"
+          onclick="document.getElementById('output2').value=this.value"
+          class="radioBtn"
+          value="blow-by-blow"
+        />
+        A) blow-by-blow
+      </label>
+
+      <label class="check-block">
+        <input
+          type="radio"
+          name="name1"
+          class="radioBtn"
+          onclick="document.getElementById('output2').value=this.value"
+          value="back to the drawing board"
+        />
+        B) back to the drawing board
+      
+      </label>
+      <label class="check-block"
+        ><input
+          type="radio"
+          name="name1"
+          class="radioBtn"
+          onclick="document.getElementById('output2').value=this.value"
+          value="bottlenecks"
+        />
+        C) bottlenecks
+      </label>
+      <label class="check-block">
+        <input
+          type="radio"
+          name="name1"
+          class="radioBtn"
+          onclick="document.getElementById('output2').value=this.value"
+          value="black economy"
+        />
+        D) black economy
+      </label>
+      <label class="check-block">
+          <input
+            type="radio"
+            name="name1"
+            class="radioBtn"
+            onclick="document.getElementById('output2').value=this.value"
+            value="bottom line"
+          />
+        E) bottom line
+        </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      4. The product didn't work in the States. As they say there, it really
+      <input class="input__question" id="output3" type="text" name="data[]" /> 
+      .
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output3').value=this.value"  value="back to the drawing board" />
+        A) back to the drawing board
+      </label>
+
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output3').value=this.value" value="bottlenecks" />
+        B) bottlenecks
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output3').value=this.value" value="bombed" />
+        C) bombed
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output3').value=this.value" value="blow-by-blow" />
+        D) blow-by-blow
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output3').value=this.value" value="bottom line"  />
+        E) bottom line
+      </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      5. However, the same product sold really well in England. As they say there, it
+      <input class="input__question" id="output4" type="text" name="data[]" /> 
+      .
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output4').value=this.value" value="back to the drawing board" />
+        A) back to the drawing board
+      </label>
+
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output4').value=this.value" value="bottlenecks"  />
+        B) bottlenecks
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output4').value=this.value" value="bottom line" />
+        C) bottom line
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output4').value=this.value" value="blue collar"  />
+        D) blue collar
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output4').value=this.value" value="went like a bomb" />
+        E) went like a bomb
+      </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      6. He used to work on the factory floor. Yes, he really started out as a
+      <input class="input__question" type="text" id="output5" name="data[]" /> 
+      worker.
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output5').value=this.value" value="blue collar" />
+        A) blue collar
+      </label>
+
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output5').value=this.value" value="back to the drawing board" />
+        B) back to the drawing board
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output5').value=this.value" value="bottlenecks" />
+        C) bottlenecks
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output5').value=this.value" value="bottom line"  />
+        D) bottom line
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output5').value=this.value" value="blow-by-blow"  />
+        E) blow-by-blow
+        </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      7. There are many reasons why this should be a success. However, the
+      <input class="input__question" type="text" id="output6" name="data[]" /> 
+      is that it has been a big flop.
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output6').value=this.value" value="bottom line" />
+        A) bottom line
+      </label>
+
+      <label class="check-block">
+        <input type="radio" name="name1"  onclick="document.getElementById('output6').value=this.value" value="back to the drawing board"  />
+        B) back to the drawing board
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output6').value=this.value" value="bottlenecks" />
+        C) bottlenecks
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output6').value=this.value" value="blow-by-blow" />
+        D) blow-by-blow
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output6').value=this.value" value="a bitter pill" />
+        E) a bitter pill
+        </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      8. Production has been unable to keep pace with demand. We are doing our best to eliminate the
+      <input class="input__question" type="text" id="output7" name="data[]" /> 
+      .
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output7').value=this.value" value="blow-by-blow" />
+        A) blow-by-blow
+      </label>
+
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output7').value=this.value" value="back to the drawing board"  />
+        B) back to the drawing board
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output7').value=this.value" value="blew it" />
+        C) blew it
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output7').value=this.value" value="a bitter pill" />
+        D) a bitter pill
+      </label>
+      <input type="radio" name="name1" onclick="document.getElementById('output7').value=this.value" value="bottlenecks" />
+        E) bottlenecks
+      </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      9. We'll have to start again on this one -it's time to go
+      <input class="input__question" type="text" id="output8" name="data[]" /> 
+      .
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output8').value=this.value" value="blow-by-blow" />
+        A) blow-by-blow
+      </label>
+
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output8').value=this.value" value="blew it"  />
+        B) blew it
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1"  onclick="document.getElementById('output8').value=this.value" value="black economy" />
+        C) black economy
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output8').value=this.value" value="bombed"  />
+        D) bombed
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output8').value=this.value" value="back to the drawing board"  />
+        E) back to the drawing board
+        </label>
+    </div>
+  </div>
+
+  <div class="question__block">
+    <label>
+      10. Don't leave out any details. I want a full
+      <input class="input__question" type="text" id="output9" name="data[]" /> 
+      account of what happened in the meeting.
+    </label>
+    <br />
+    <div class="radio-block">
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output9').value=this.value" value="blow-by-blow" />
+        A) blow-by-blow
+      </label>
+
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output9').value=this.value" value="blew it"  />
+        B) blew it
+      </label>
+      <label class="check-block"
+        ><input type="radio" name="name1" onclick="document.getElementById('output9').value=this.value" value="black economy" />
+        C) black economy
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output9').value=this.value" value="bombed"  />
+        D) bombed
+      </label>
+      <label class="check-block">
+        <input type="radio" name="name1" onclick="document.getElementById('output9').value=this.value" value="went like a bomb"  />
+        E) went like a bomb
+        </label>
+    </div>
+  </div>
+  <input class="btn" type="submit" id="result" value="result">
+</form>
+
+
+</div>
+</main>
+</body>
+</html>
